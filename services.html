@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <title>Service Details</title>
+    <style>
+        /* Custom styles */
+        .service-card {
+            opacity: 0;
+            animation: fadeInAnimation ease-in 1s forwards;
+        }
+
+        .service-separator {
+            border-top: 2px solid #ddd;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Custom styles can be added here */
+        body {
+            padding: 2%;
+            background-color: #f8f9fa;
+            direction: rtl;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+        .navbar-toggler {
+            border-color: white;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #dc3545;
+        }
+
+        .hero-section {
+            background: url("https://via.placeholder.com/1920x800") center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .about-us-section,
+        .services-section,
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .about-us-section h2,
+        .services-section h2,
+        .contact-section h2 {
+            color: #007bff;
+            margin-bottom: 40px;
+        }
+
+
+        .main-content {
+            margin-left: 0;
+            transition: margin-left 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav .nav-item {
+                margin-right: 0;
+            }
+
+            .navbar-brand {
+                font-size: 18px;
+            }
+
+            .hero-section {
+                padding: 100px 0;
+            }
+
+            .about-us-section,
+            .services-section,
+            .contact-section {
+                padding: 60px 0;
+            }
+
+            .service-card {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        /* Add additional styles for the service grid */
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .parallax-bg {
+            /* The image used */
+            background-image: url('img/pexels-pixabay-534151.jpg');
+
+            /* Set a specific height */
+            height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Add some overlay or transparency if needed */
+            opacity: 0.8;
+            color: #fff; /* Text color on top of the background */
+        }
+
+        .container-content {
+            padding: 100px 0;
+        }
+
+        /* Custom styles */
+        .service-card {
+            opacity: 0;
+            background-color: #b3b61b;
+            animation: fadeInAnimation ease-in 1s forwards;
+        }
+        .floating-btn {
+        position: fixed;
+        z-index: 1000;
+        transition: bottom 0.5s ease;
+        }
+
+        .whatsapp-btn, .telegram-btn {
+        right: 20px;
+        font-size: 32px; /* Adjust the font size as needed */
+        }
+
+        .whatsapp-btn {
+        bottom: 20px;
+        }
+
+        .telegram-btn {
+        bottom: 80px; /* Adjust the position as needed */
+        }
+
+        .floating-btn:hover {
+        bottom: 20px; /* Adjust the hover position as needed */
+        }
+
+        /* Set color to Telegram icon */
+        .telegram-btn i {
+        color: white; /* Adjust the color as needed */
+        }
+        
+    </style>
+</head>
+
+<body class="text-right">
+    <div class="parallax-bg">
+        <!-- You can place content on top of the 3D background here -->
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="#">   
+             <img src="img/logo.jpg" alt="شعار الشركة" height="70" width="200"> <!-- Adjust the height as needed -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html#home">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">من نحن</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      خدماتنا
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                      <a class="dropdown-item" href="services.html#service1-details">تفكيك وتغليف الأثاث</a>
+                      <a class="dropdown-item" href="services.html#service2-details">نقل الأثاث</a>
+                      <a class="dropdown-item" href="services.html#service3-details">ترتيب وتركيب الأثاث</a>
+                      <a class="dropdown-item" href="services.html#service4-details">خدمات التخزين</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">اتصل بنا</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-nav">
+            <!-- Language Switch Button -->
+            <button class="btn btn-link" onclick="toggleLanguage()">تغيير اللغة</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Content of l.html -->
+        <!-- Service 1 Details -->
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-btn whatsapp-btn" style="width: 20px;" id="whatsappBtn">
+    <a href="https://wa.me/966545749429" target="_blank" class="btn btn-success btn-lg" role="button">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Floating Telegram Button -->
+  <div class="floating-btn telegram-btn" id="telegramBtn">
+    <a style="background-color: #0088cc;" href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="btn btn-primary btn-lg" role="button">
+      <i class="fab fa-telegram"></i>
+    </a>
+  </div>
+
+        <div class="container mt-5" id="service1-details">
+            <h2 class="text-center mb-4">Service Details</h2>
+
+            <!-- Service Card -->
+            <div class="card service-card">
+                <img src="img/pexels-tima-miroshnichenko-6169662.jpg" width="50%"height="50%" class="card-img-top" alt="Service
+                Image">
+                <div class="card-body" title=">تفكيك وتغليف الأثاث (Furniture Disassembly and Wrapping)">
+                    <h5 class="card-title">تفكيك وتغليف الأثاث (Furniture Disassembly and Wrapping)</h5>
+                    <p class="card-text">
+                        يقدم فريقنا المتخصص خدمة تفكيك وتغليف الأثاث بعناية واهتمام لضمان سلامته أثناء عملية
+                        النقل. يعد هذا الخدمة جزءًا أساسيًا من عملية النقل لتسهيل عملية التحميل والتفريغ وضمان وصول
+                        الأثاث بشكل سليم إلى وجهته النهائية.
+                    </p>
+                    <p class="card-text">
+                        <strong>خدماتنا تشمل:</strong>
+                        <ul>
+                            <li>تفكيك الأثاث: فريقنا يتخذ خطوات حذرة في تفكيك جميع قطع الأثاث بعناية لضمان سلامتها
+                                وتسهيل عملية التحميل.</li>
+                            <li>استخدام مواد التغليف: نقوم باستخدام مواد تغليف عالية الجودة وآمنة لضمان حماية الأثاث
+                                من الخدوش والتلف أثناء النقل.</li>
+                            <li>تغليف القطع: قبل وضع الأثاث في وسائل النقل، نقوم بتغليف كل قطعة بعناية لتقديم حماية
+                                إضافية وضمان سلامتها.</li>
+                        </ul>
+                    </p>
+                    <p class="card-text">
+                        <strong>فوائد الخدمة:</strong>
+                        <ul>
+                            <li>ضمان سلامة الأثاث خلال عملية النقل.</li>
+                            <li>تسهيل عملية التحميل والتفريغ.</li>
+                            <li>حماية فعالة ضد التلف والخدوش.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-bg"></div>
+
+        <div class="service-separator"></div>
+        <br>
+        <br>
+        
+      
+
+        <div class="container mt-5" id="service2-details">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <img src="img/images (2).jpg" class="card-img-top" alt="Service Image">
+                <div class="card-body">
+                    <h5 class="card-title" title="نقل الأثاث (Furniture Transportation)">نقل الأثاث (Furniture Transportation)</h5>
+                    <p class="card-text">
+                        تقدم خدمة نقل الأثاث الخاصة بنا حلاً شاملاً لضمان نقل الأثاث بكفاءة وسلامة. يعتبر نقل الأثاث
+                        جزءًا حاسمًا من عملية الانتقال، ونحن نهتم بتقديم الخدمة بأعلى مستويات الاحتراف والعناية.
+                    </p>
+                    <p class="card-text">
+                        <strong>خدماتنا تشمل:</strong>
+                        <ul>
+                            <li>استخدام وسائل النقل المتنوعة: نحن نستخدم وسائل النقل المجهزة بشكل جيد لضمان نقل الأثاث
+                                بشكل فعال وآمن.</li>
+                            <li>تحميل وتفريغ بعناية: يقوم فريقنا بعملية تحميل وتفريغ الأثاث بعناية لتجنب التلف أو
+                                الخدوش.</li>
+                            <li>توفير التغليف الآمن: نحرص على استخدام مواد التغليف الآمنة لحماية الأثاث خلال عملية
+                                النقل.</li>
+                        </ul>
+                    </p>
+                    <p class="card-text">
+                        <strong>فوائد الخدمة:</strong>
+                        <ul>
+                            <li>نقل فعال وآمن: ضمان نقل الأثاث إلى وجهته النهائية بشكل آمن وفعال.</li>
+                            <li>خدمة تحميل وتفريغ محترفة: تقديم خدمة تحميل وتفريغ الأثاث بكفاءة وحرفية.</li>
+                            <li>حماية الأثاث: استخدام تقنيات التغليف لضمان حماية الأثاث من التلف والخدوش.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="parallax-bg"></div>
+
+        <div class="service-separator"></div>
+
+        <div class="container mt-5" id="service3-details">
+            <!-- Furniture Arrangement and Assembly Section -->
+            <div class="card service-card">
+                <img src="img/pexels-rdne-stock-project-7464720.jpg" class="card-img-top" alt="Service Image">
+
+                <div class="card-body" title="اجراءات ترتيب وتركيب الأثاث:">
+                    <h5 class="card-title">اجراءات ترتيب وتركيب الأثاث:</h5>
+                    <ul>
+                        <li>تجميع الأثاث الجديد:</li>
+                        <p>قد يكون الأثاث الجديد يتطلب التجميع، سواء كان ذلك الأثاث الذي تم شراؤه من المتاجر أو الأثاث الذي تم توصيله في صورة مفككة.</p>
+        
+                        <li>إعادة ترتيب الأثاث:</li>
+                        <p>يمكن ترتيب الأثاث الحالي لتحسين تدفق الغرفة أو المساحة. قد يشمل ذلك تحريك الأثاث لخلق فضاء أكبر أو تحسين توجيه الإضاءة.</p>
+        
+                        <li>تثبيت الأثاث بشكل آمن:</li>
+                        <p>تثبيت الأثاث بشكل صحيح لضمان سلامة الأثاث والأفراد.</p>
+        
+                        <li>استخدام أدوات النجارة:</li>
+                        <p>في بعض الحالات، قد يكون الأمر يتطلب استخدام أدوات النجارة لتثبيت الأثاث بشكل صحيح.</p>
+        
+                        <li>التخلص من الأثاث القديم:</li>
+                        <p>قد يشمل ذلك إزالة الأثاث القديم والتخلص منه بشكل صحيح.</p>
+                    </ul>
+                    <h5>نصائح لترتيب وتركيب الأثاث:</h5>
+                    <ul>
+                        <li>قم بقياس المساحة بعناية قبل ترتيب الأثاث لضمان أنه يناسب بشكل جيد.</li>
+                        <li>احرص على اتباع تعليمات التجميع إذا كان الأثاث يحتاج إلى تجميع.</li>
+                        <li>قد تحتاج إلى مساعدة إضافية، خاصةً عند ترتيب وتركيب القطع الكبيرة.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="parallax-bg"></div>
+
+        <div class="service-separator"></div>
+
+        <div class="container mt-5" id="service4-details">
+            <!-- Storage Services Card -->
+            <div class="card service-card">
+                <img src="img/pexels-tima-miroshnichenko-6827150.jpg" class="card-img-top" alt="Service Image">
+
+                <div class="card-body" title=">خدمات التخزين (Storage Services)">
+                    <h5 class="card-title">خدمات التخزين (Storage Services)</h5>
+                    <p class="card-text">
+                        خدمات التخزين هي خدمات تقدمها الشركات والمؤسسات لتوفير مساحة آمنة وفعالة لتخزين البضائع والممتلكات
+                        لفترات طويلة أو قصيرة. تعتبر هذه الخدمات مفيدة للأفراد والشركات على حد سواء، حيث تساعد في حل
+                        مشاكل التخزين وتوفير مساحة إضافية.
+                    </p>
+                    <p class="card-text">
+                        <strong>خدمات التخزين تشمل عادةً:</strong>
+                        <ul>
+                            <li>تأمين مساحة تخزين آمنة: توفير بيئة آمنة ومؤمنة للممتلكات المخزنة.</li>
+                            <li>تنظيم وتصنيف البضائع: فرز وتنظيم البضائع بشكل يسهل الوصول إليها.</li>
+                            <li>حماية البضائع: اتخاذ إجراءات لحماية البضائع من الضرر أو الفقدان.</li>
+                            <li>فحص دوري وصيانة: ضمان أمان وحالة جيدة للممتلكات من خلال الفحص والصيانة الدورية.</li>
+                            <li>خيارات التخزين المتنوعة: تقديم خيارات متنوعة لحجم ونوعيات التخزين.</li>
+                        </ul>
+                    </p>
+                    <p class="card-text">
+                        <strong>فوائد خدمات التخزين:</strong>
+                        <ul>
+                            <li>توفير مساحة إضافية: حلاً للأفراد والشركات الذين يحتاجون إلى مزيد من المساحة لتخزين ممتلكاتهم.</li>
+                            <li>الأمان والحماية: ضمان سلامة الممتلكات من التلف أو السرقة.</li>
+                            <li>مرونة في فترات التخزين: إمكانية اختيار فترات التخزين وتعديلها وفقًا للاحتياجات.</li>
+                            <li>تخزين موسمي: خدمات مخصصة لتخزين العناصر الموسمية.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+       
+        
+
+ <!-- White Footer Section -->
+ <footer class="white-footer" style="background-color: #001f3f;color: white;">
+    <div class="container">
+      <div class="row">
+        <!-- Quick Links -->
+        <div class="col-md-4">
+          <h4 class="footer-heading">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#about">من نحن</a></li>
+            <li><a href="index.html#services">خدماتنا</a></li>
+            <li><a href="index.html#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact Information -->
+        <div class="col-md-4">
+          <h4 class="footer-heading">تواصل معنا</h4>
+          <p><strong>العنوان:</strong> الاردن عمان </p>
+          <p><strong>الهاتف:</strong> 01091534147</p>
+          <p><strong>البريد الإلكتروني:</strong> test@gmail.com</p>
+        </div>
+  
+        <!-- Developer Information -->
+        <div class="col-md-4">
+          <h4 class="footer-heading">معلومات المطور</h4>
+          <p><strong>المطور:</strong> Toson Abdeluahab </p>
+          <p><strong>البريد الإلكتروني:</strong> tosonaligadallah@gmail.com</p>
+          <p><strong>الموقع الشخصي:</strong> <a href="[Developer Website]" target="_blank">Facebook</a></p>
+        </div>
+      </div>
+  
+      <!-- Social Media Links -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="footer-hr">
+          <p class="caption">تواصل معنا عبر وسائل التواصل الاجتماعي:</p>
+          <ul class="social-media-icons">
+            <li><a href="[Facebook Link]" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="[Twitter Link]" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="[LinkedIn Link]" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <!-- Add more social media icons as needed -->
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Copyright Information -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="footer-hr">
+          <p class="text-center footer-copyright">
+            حقوق النشر &copy; شركة انوار القدس لنقل الاثاث (العفش) علم 2024
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+        <!-- Include Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            // Add a script to toggle the background color class on scroll
+            document.addEventListener('DOMContentLoaded', function () {
+              var container = document.querySelector('.container');
+              var navbar = document.querySelector('.navbar');
+          
+              // Listen for the scroll event
+              window.addEventListener('scroll', function () {
+                // Check if the scroll position is beyond the navbar
+                if (window.scrollY > navbar.clientHeight) {
+                  // Add the background color class to the container
+                  container.classList.add('scroll-background');
+                } else {
+                  // Remove the background color class if scrolling above the navbar
+                  container.classList.remove('scroll-background');
+                }
+              });
+            });
+          </script>
+           <script>
+            // Move the button automatically
+            var button = document.getElementById('whatsappBtn');
+            var moveUp = true;
+        
+            setInterval(function () {
+              // Change the position of the button
+              var currentPosition = parseInt(window.getComputedStyle(button).bottom);
+              var newPosition = moveUp ? currentPosition + 5 : currentPosition - 5;
+              button.style.bottom = newPosition + 'px';
+        
+              // Toggle the direction
+              moveUp = !moveUp;
+            }, 500); // Adjust the interval as needed
+          </script>
+           <script>
+            // Move the buttons automatically
+            var whatsappBtn = document.getElementById('whatsappBtn');
+            var telegramBtn = document.getElementById('telegramBtn');
+            var moveUp = true;
+        
+            setInterval(function () {
+              // Change the position of the WhatsApp button
+              var whatsappCurrentPosition = parseInt(window.getComputedStyle(whatsappBtn).bottom);
+              var whatsappNewPosition = moveUp ? whatsappCurrentPosition + 5 : whatsappCurrentPosition - 5;
+              whatsappBtn.style.bottom = whatsappNewPosition + 'px';
+        
+              // Change the position of the Telegram button
+              var telegramCurrentPosition = parseInt(window.getComputedStyle(telegramBtn).bottom);
+              var telegramNewPosition = moveUp ? telegramCurrentPosition + 5 : telegramCurrentPosition - 5;
+              telegramBtn.style.bottom = telegramNewPosition + 'px';
+        
+              // Toggle the direction
+              moveUp = !moveUp;
+            }, 1000); // Adjust the interval as needed
+          </script>
+        </body>
+        </html>
+      
+

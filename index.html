@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="شركة نقل الاثاث (العفش ) في الاردن ">
+
+    <title>شركة الأثاث</title>
+    <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <!-- Link to Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      /* Custom styles can be added here */
+      body {
+        padding: 2%;
+        background-color: #f8f9fa;
+        direction: rtl;
+      }
+
+      /* Navbar styles */
+      .navbar {
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.5s ease;
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+      }
+
+      .navbar-toggler {
+        color: white;
+      }
+
+      .navbar-nav .nav-item {
+        margin-right: 10px;
+      }
+
+      .navbar-nav .nav-link {
+        color: #fff;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #dc3545;
+      }
+
+      /* Hero section styles */
+      .hero-section {
+        background: url("https://via.placeholder.com/1920x800") center/cover
+          no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 150px 0;
+      }
+
+      .hero-section h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        background-color: #dc3545;
+        border-color: #dc3545;
+      }
+
+      /* Sections padding */
+      .about-us-section,
+      .services-section,
+      .contact-section {
+        padding: 80px 0;
+      }
+
+      /* Main content styles */
+      .main-content {
+        margin-left: 0;
+        transition: margin-left 0.5s;
+      }
+
+      @media (max-width: 768px) {
+        /* Sidebar adjustments for small screens */
+        .sidebar {
+          left: 0; /* Show the sidebar on small screens */
+        }
+
+        /* Main content adjustments for small screens */
+        .main-content {
+          margin-left: 0;
+        }
+      }
+
+      /* Add additional styles for the service grid */
+      .service-card {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: scale(1.05);
+      }
+
+      .service-card img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .parallax-bg {
+        margin-top: 5%;
+  background-image: url('img/pexels-mart-production-7415019.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  color: #fff;
+  height: 600px; /* Set a default height for larger screens */
+
+  /* Additional styles for larger screens */
+  @media (min-width: 768px) {
+    height: 800px; /* Adjust the height for larger screens */
+    background-attachment: fixed;
+  }
+
+  /* Additional styles for smaller screens */
+  @media (max-width: 767px) {
+    height: 300px; /* Adjust the height for smaller screens */
+    background-attachment: scroll; /* Scroll background for smaller screens */
+  }
+}
+
+      .parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.parallax-content h1 {
+  background-color: gray;
+
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.parallax-content a.btn {
+  font-size: 18px;
+}
+
+/* Service Icons Section Styles */
+.service-icons-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.service-icon {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-icon i {
+  font-size: 48px;
+  color: #dc3545;
+  margin-bottom: 20px;
+}
+
+.service-icon h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-icon p {
+  font-size: 16px;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .parallax-content h1 {
+    font-size: 24px;
+  }
+
+  .service-icon i {
+    font-size: 36px;
+  }
+
+  .service-icon h3 {
+    font-size: 20px;
+  }
+
+  .service-icon p {
+    font-size: 14px;
+  }
+}
+.service-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .service-card:hover .service-details {
+    transform: translateY(0);
+  }
+  /* Add this CSS to your stylesheet */
+.service-image {
+  height: 300px; /* Set your desired fixed height */
+  width: 100%; /* Ensure the width is 100% to maintain aspect ratio */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+.floating-btn {
+  position: fixed;
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+}
+
+.whatsapp-btn, .telegram-btn {
+  right: 20px;
+  font-size: 32px; /* Adjust the font size as needed */
+}
+
+.whatsapp-btn {
+  bottom: 20px;
+}
+
+.telegram-btn {
+  bottom: 80px; /* Adjust the position as needed */
+}
+
+.floating-btn:hover {
+  bottom: 20px; /* Adjust the hover position as needed */
+}
+
+/* Set color to Telegram icon */
+.telegram-btn i {
+  color: white; /* Adjust the color as needed */
+}
+.navbar-toggler-icon {
+  /* background-color:#dc3545; */
+  color: #fff; /* Replace with your desired color */
+}
+
+    </style>
+  </head>
+  <body class="text-right">
+    
+    <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="#">
+    <img src="img/logo.jpg" alt="شعار الشركة" height="70" width="200"> <!-- Adjust the height as needed -->
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span  class="navbar-toggler-icon" >
+      menu
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#home">الرئيسية</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">من نحن</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          خدماتنا
+        </a>
+        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+          <a class="dropdown-item" href="services.html#service1-details">تفكيك وتغليف الأثاث</a>
+          <a class="dropdown-item" href="services.html#service2-details">نقل الأثاث</a>
+          <a class="dropdown-item" href="services.html#service3-details">ترتيب وتركيب الأثاث</a>
+          <a class="dropdown-item" href="services.html#service4-details">خدمات التخزين</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">اتصل بنا</a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-nav">
+    <!-- Language Switch Button -->
+    <button class="btn btn-link" onclick="toggleLanguage()">
+      تغيير اللغة
+    </button>
+  </div>
+</nav>
+
+    
+    <!-- Parallax Background -->
+<!-- After the parallax-bg div -->
+<div class="parallax-bg">
+  <div class="parallax-content text-center">
+    <h1 class="display-4">
+      مرحبا بكم في انوار القدس
+      <p class="lead" style="background-color: inherit;" >تعرف على خدماتنا</p>
+    </h1>
+    <a href="#services" class="btn btn-primary btn-lg">اكتشف الخدمات</a>
+  </div>
+</div>
+<!-- Service Icons Section -->
+<section class="service-icons-section">
+  <div class="container">
+      <h2 class="text-center mb-4">مميزاتنا</h2>
+      <div class="row">
+          <!-- Prices Icon -->
+          <div class="col-md-4 service-icon">
+              <a href="#prices">
+                  <i class="fas fa-dollar-sign"></i>
+                  <h3>أفضل الأسعار</h3>
+                  <p>تنافسية ومناسبة لاحتياجاتك</p>
+              </a>
+          </div>
+
+          <!-- Transportation Icon -->
+          <div class="col-md-4 service-icon">
+              <a href="#transportation">
+                  <i class="fas fa-shipping-fast"></i>
+                  <h3>خدمة النقل المجلي</h3>
+                  <p>نقل فعّال ومجهز للأثاث</p>
+              </a>
+          </div>
+
+          <!-- Availability Icon -->
+          <div class="col-md-4 service-icon">
+              <a href="#availability">
+                  <i class="far fa-clock"></i>
+                  <h3>خدمة 24 ساعة</h3>
+                  <p>نحن هنا لخدمتك في أي وقت</p>
+              </a>
+          </div>
+
+          <!-- Warranty Icon -->
+          <div class="col-md-4 service-icon">
+              <a href="#warranty">
+                  <i class="fas fa-shield-alt"></i>
+                  <h3>الضمان</h3>
+                  <p>ضمان لسلامة أثاثك</p>
+              </a>
+          </div>
+
+          <!-- Technical Support Icon -->
+          <div class="col-md-4 service-icon">
+              <a href="#technical-support">
+                  <i class="fas fa-headset"></i>
+                  <h3>الدعم الفني</h3>
+                  <p>فريق دعم فني متخصص</p>
+              </a>
+          </div>
+
+          <!-- Our Experience Icon -->
+          <div class="col-md-4 service-icon">
+              <a href="#our-experience">
+                  <i class="fas fa-chart-line"></i>
+                  <h3>خبراتنا</h3>
+                  <p>سنوات من الخبرة في مجال النقل</p>
+              </a>
+          </div>
+      </div>
+  </div>
+</section>
+    <!-- Main Content -->
+    <div class="main-content">
+   
+
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-btn whatsapp-btn" style="width: 20px;" id="whatsappBtn">
+    <a href="https://wa.me/966545749429" target="_blank" class="btn btn-success btn-lg" role="button">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Floating Telegram Button -->
+  <div class="floating-btn telegram-btn" id="telegramBtn">
+    <a style="background-color: #0088cc;" href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="btn btn-primary btn-lg" role="button">
+      <i class="fab fa-telegram"></i>
+    </a>
+  </div>
+<!-- Services Section -->
+<section id="services" class="services-section" title="خدمات نقل الأثاث">
+  <div class="container">
+    <h2>خدماتنا</h2>
+    <div id="dynamic-content"></div>
+    <div class="row">
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="service-card" title="تفكيك وتغليف الأثاث">
+          <h3>تفكيك وتغليف الأثاث:</h3>
+          <img class="service-image" src="img/pexels-mart-production-7415019.jpg" alt="Service 1" />
+          <div class="service-details">
+            <p>فريق متخصص يقوم بتفكيك الأثاث بعناية لتسهيل عملية النقل. استخدام مواد التغليف الآمنة لضمان سلامة الأثاث أثناء النقل.</p>
+            <a href="services.html#service1-details" class="read-more-link">اقرأ المزيد</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-4">
+        <div class="service-card" title="نقل الأثاث">
+          <h3>نقل الأثاث:</h3>
+          <img class="service-image" src="img/images.jpg" alt="Service 2" />
+          <div class="service-details">
+            <p>استخدام وسائل النقل المتنوعة والمجهزة لضمان نقل الأثاث بشكل فعال. تحميل وتفريغ الأثاث بعناية لتجنب التلف أو الخدوش</p>
+            <a href="services.html#service2-details" class="read-more-link">اقرأ المزيد</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-4">
+        <div class="service-card" title="ترتيب وتركيب الأثاث">
+          <h3>ترتيب وتركيب الأثاث:</h3>
+          <img class="service-image" src="img/pexels-blue-bird-7217752.jpg" alt="Service 3" />
+          <div class="service-details">
+            <p>تقديم خدمات ترتيب وتركيب الأثاث في الموقع الجديد وفقًا لتوجيهات العميل.</p>
+            <a href="services.html#service3-details" class="read-more-link">اقرأ المزيد</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-md-4">
+        <div class="service-card" title="خدمات التخزين">
+          <h3>خدمات التخزين:</h3>
+          <img class="service-image" src="img/pexels-tima-miroshnichenko-6827150.jpg" alt="Service 3" />
+          <div class="service-details">
+            <p>توفير خدمات التخزين إذا كانت هناك حاجة لتأجيل وصول الأثاث إلى وجهته النهائية.</p>
+            <a href="services.html#service4-details" class="read-more-link">اقرأ المزيد</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+      <!-- About Us Section -->
+      <section id="about" class="about-us-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2 class="display-4 mb-4">من نحن</h2>
+              <p class="lead">
+                
+                
+نحن شركة رائدة في مجال نقل الأثاث وبيعه، ملتزمون بتقديم أفضل الحلول لعملائنا. اهلا وسهلا بكم بموقع انوار القدس لنقل الاثاث (العفش) وهذة نبذة بسيطة عنا حيث انة تم بحمد الله افتتاح اول مكتب لشركة انوار القدس  في  شهر فبراير 2017م سنوات اكتسبنا الكثير  من الخبرة والعمل الدوؤب على الحصول على رضاء العملاء لنكسب منهم زبائن اخرين حيث انهم يكونون مصدر دعاية لنا وقد حققنا انجازات كبيرة بحمد الله تعالى وذلك بنقل الاف الشقق والفلل والقصور وكذلك الاف الشركات والمؤسسات الحكومية والخاصة وعلى مدى الاعوام السابقة فقد اكتسب موظفينا الخبرة الكافية في المحافظة على امتعة العملاء واثاثهم نحن معكم على مدار الاسبوع 7 أيام في الأسبوع للرد على المكالمات والأسئلة التي لديكم نحن مصممون على ضمان إرضاء عملائنا لمساعدتك على خطة النقل الخاصة بك. لا تتردد في الاتصال بنا لننظر حولنا ومعرفة كيفية اداء العمل بكل اقتدار علما باننا ننجز العمل في الغالب بنفس اليوم حيث يتم فك الاثاث وتغليفة ونقلة وتركيبة في نفس اليوم لاعناء بعد اليوم عندما تبداء مهمتنا في النقل فتاكد بان عمالتنا على مستوى كبير من الخبرة والامانة في العمل
+                <!-- Add additional details about your company -->
+                
+<div class="container">
+  <h1 class="mt-4 mb-4">نقل داخل عمان ومحافظات الاردن </h1>
+  
+  <p>توفر شركة انوار القدس عملية النقل المحلي وخدمات التعبئة والتغليف.</p>
+
+  <h2 class="mt-4 mb-2">طرق نقل مختلفة</h2>
+  <p>تقدم انوار القدس طرق النقل المختلفة لتناسب العناصر المنقولة.</p>
+</div>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <!-- Add an image of your showroom or team -->
+              <img src="img/pexels-thirdman-7180811.jpg" alt="صورة عن الشركة" class="img-fluid">
+              <!-- Adjust the path to your image and add the 'img-fluid' class for responsiveness -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="display-4 text-center mb-4">تواصل معنا</h2>
+
+    <div class="row justify-content-center">
+      <!-- Service Area Box -->
+      <div class="col-md-4 mb-4">
+        <div class="contact-box bg-light p-4 text-center">
+          <i  style="color: #dc3545;"  class="fas fa-map-marker-alt fa-2x  mb-3"></i>
+          <p class="mb-0"><strong>نطاق الخدمة:</strong></p>
+          <p class="mb-0">الأردن</p>
+        </div>
+      </div>
+
+      <!-- Mobile Box -->
+      <div class="col-md-4 mb-4">
+        <div class="contact-box bg-light p-4 text-center">
+          <i  style="color: #dc3545;" class="fas fa-mobile-alt fa-2x  mb-3"></i>
+          <p class="mb-0"><strong>جوال:</strong></p>
+          <p class="mb-0">
+            <a href="https://wa.me/966545749429" target="_blank" class="whatsapp-link">
+              <i class="fab fa-whatsapp"></i>
+              +966545749429 (WhatsApp)
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Working Hours Box -->
+      <div class="col-md-4 mb-4">
+        <div class="contact-box bg-light p-4 text-center">
+          <i style="color: #dc3545;" class="far fa-clock fa-2x  mb-3"></i>
+          <p class="mb-0"><strong>مواعيد العمل:</strong></p>
+          <p class="mb-0">نعمل على مدار 24 ساعة</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="send_email.php" method="post" class="mt-5">
+      <div class="form-group">
+        <label for="name">الاسم:</label>
+        <input type="text" class="form-control" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" class="form-control" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">الرسالة:</label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">إرسال</button>
+    </form>
+  </div>
+</section>
+
+    </div>
+
+
+ <!-- White Footer Section -->
+<footer class="white-footer" style="background-color: #001f3f;color: white;">
+  <div class="container">
+    <div class="row">
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h4 class="footer-heading">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="col-md-4">
+        <h4 class="footer-heading">تواصل معنا</h4>
+        <p><strong>العنوان:</strong> الاردن عمان </p>
+        <p><strong>الهاتف:</strong> 01091534147</p>
+        <p><strong>البريد الإلكتروني:</strong> test@gmail.com</p>
+      </div>
+
+      <!-- Developer Information -->
+      <div class="col-md-4">
+        <h4 class="footer-heading">معلومات المطور</h4>
+        <p><strong>المطور:</strong> Toson Abdeluahab </p>
+        <p><strong>البريد الإلكتروني:</strong> tosonaligadallah@gmail.com</p>
+        <p><strong>الموقع الشخصي:</strong> <a href="[Developer Website]" target="_blank">Facebook</a></p>
+      </div>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="footer-hr">
+        <p class="caption">تواصل معنا عبر وسائل التواصل الاجتماعي:</p>
+        <ul class="social-media-icons">
+          <li><a href="[Facebook Link]" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="[Twitter Link]" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="[LinkedIn Link]" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <!-- Add more social media icons as needed -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Information -->
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="footer-hr">
+        <p class="text-center footer-copyright">
+          حقوق النشر &copy; شركة انوار القدس لنقل الاثاث (العفش) علم 2024
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+       <script>
+        // Move the buttons automatically
+        var whatsappBtn = document.getElementById('whatsappBtn');
+        var telegramBtn = document.getElementById('telegramBtn');
+        var moveUp = true;
+    
+        setInterval(function () {
+          // Change the position of the WhatsApp button
+          var whatsappCurrentPosition = parseInt(window.getComputedStyle(whatsappBtn).bottom);
+          var whatsappNewPosition = moveUp ? whatsappCurrentPosition + 5 : whatsappCurrentPosition - 5;
+          whatsappBtn.style.bottom = whatsappNewPosition + 'px';
+    
+          // Change the position of the Telegram button
+          var telegramCurrentPosition = parseInt(window.getComputedStyle(telegramBtn).bottom);
+          var telegramNewPosition = moveUp ? telegramCurrentPosition + 5 : telegramCurrentPosition - 5;
+          telegramBtn.style.bottom = telegramNewPosition + 'px';
+    
+          // Toggle the direction
+          moveUp = !moveUp;
+        }, 1000); // Adjust the interval as needed
+      </script>
+  </body>
+</html>
